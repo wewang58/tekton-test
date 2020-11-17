@@ -1,0 +1,13 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: test-build-push-run
+spec:
+  serviceAccountName: docker-sa
+  pipelineRef:
+    name: test-build-push
+  resources:
+  - name: repo
+    resourceRef:
+      name: wewang-resource
+
